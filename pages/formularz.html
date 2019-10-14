@@ -11,8 +11,35 @@
   </head>
 
   <body>
-
-   
+  <form action="#" method="get" id="form1">
+          Imię <input type="text" name="name"><br />
+          Nazwisko <input type="text" name="surname"><br />
+          Kolor <select name="color">
+              <optgroup label="Ciemny">
+                  <option name="color" value="black">czarny</option>
+                  <option name="color" value="grey">szary</option>
+              </optgroup>
+              <optgroup label="Jasny">
+                  <option name="color" value="yellow">żółty</option>
+                  <option name="color" value="pink">różowy</option>
+              </optgroup>
+          </select>
+          <br />
+          Płeć <br />
+          <input type="radio" name="gender" value="male"> Mężczyzna<br />
+          <input type="radio" name="gender" value="female"> Kobieta<br />
+          <input type="radio" name="gender" value="other"> Inne<br />
+          Preferuję filmy <br />
+          <input type="checkbox" name="film" value="comedy"> Komedia<br />
+          <input type="checkbox" name="film" value="drama"> Dramat<br />
+          <input type="checkbox" name="film" value="historical"> Historyczny<br />
+          Napisz coś o sobie
+          <textarea name="some_words" maxlength="200">Opisz siebie</textarea>
+  
+          <input type="reset" value="Wyczyść">
+          <input type="submit" value="Wyślij">
+  
+      </form>
 
   </body>
 </html>
