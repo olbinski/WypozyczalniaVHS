@@ -14,6 +14,19 @@
 </head>
 
 <body>
+
+  <nav>
+    <a href="pages/news.html">Aktualności</a> |
+    <a href="pages/graphics.html">Kasety</a> |
+    <a href="pages/top_films.html">TOP filmy</a> |
+    <a href="pages/price_list.html">Cennik</a> |
+    <a href="pages/hyperlink.html">Etykiety</a> |
+    <a href="pages/download.html">Do pobrania</a> |
+    <a href="pages/form.html">Napisz do nas</a> |
+    <a href="pages/poll.html">Ankieta</a>
+  </nav>
+
+
   <h1>Wypożyczalnia kaset VHS</h1>
   <h2>U nas wypożyczysz każdą kasetę !!!</h2>
 
@@ -52,6 +65,85 @@
       title="Otwarta kaseta VHS" alt="Tutaj powinna być otwarta kaseta VHS" /></a> <br />
   <br />
 
+
+  <section>
+    <h2>Zagadnienia:</h2>
+
+    <ol>
+      <li>W jaki sposób przebiega walidacja formularzy? Czy wszystkie dane są automatycznie walidowane? W jaki sposób
+        wymusić brak walidacji?</li>
+      <li>Czy typ elementu wejściowego <i>date</i> w każdej przeglądarce jest wyświetlany tak samo? Jeśli nie, to
+        proszę podać, jakie są różnice.</li>
+      <li>Czy atrybut <i>placeholder</i> można zastosować do wszystkich typów elementów wejściowych? Jeśli nie, proszę
+        wymienić przynajmniej 3 typy.
+      </li>
+    </ol>
+
+    <h3>Ad. 1</h3>
+    <p>
+      Dane są najpierw walidowane po stronie klienta - sprawdzane, czy ich format jest poprawny. <br />
+      Następnie dane są wysyłane na serwer i tam sprawdzane, aby odrzucić niewłaściwe dane. <br />
+      <a href="https://developer.mozilla.org/en-US/docs/Learn/HTML/Forms/Form_validation">O to chodzi?</a>
+    </p>
+
+    <h3>Ad. 2</h3>
+    <table style="border:1px solid black">
+      <caption>Element <i>date</i></caption>
+      <tr>
+        <th>Przeglądrka </th>
+        <th>Działanie</th>
+      </tr>
+      <tr>
+        <td>Chrome</td>
+        <td>| ok</td>
+      </tr>
+      <tr>
+        <td>Internet Explorer wersja 11</td>
+        <td>| nie działa (zwykłe pola tekstowe)</td>
+      </tr>
+      <tr>
+        <td>Edge</td>
+        <td>| działa, ale dziwnie. Wyświetla się mm/dd/rrrr a wpisuje się dd.mm.rrrr. <br />
+          | Wyświetla się lista dni, miesięcy i lat zamiast kalendarza miesięcznego</td>
+      </tr>
+      <tr>
+        <td>Firefox</td>
+        <td>| tak samo jak Chrome czyli ok. Okienko ma trochę inny design</td>
+      </tr>
+      <tr>
+        <td>Safari</td>
+        <td>| mam Windowsa</td>
+      </tr>
+      <tr>
+        <td>Opera</td>
+        <td>| nie mam zainstalowanej</td>
+      </tr>
+    </table>
+    <ul>
+      <li>Chrome - ok</li>
+      <li>Internet Explorer wersja 11 - nie działa (zwykłe pola tekstowe)</li>
+      <li>Edge - działa, ale dziwnie. Wyświetla się mm/dd/rrrr a wpisuje się dd.mm.rrrr. Wyświetla się lista dni,
+        miesięcy i lat zamiast kalendarza miesięcznego</li>
+      <li>Firefox - tak samo jak Chrome czyli ok. Okienko ma trochę inny design</li>
+      <li>Safari - mam Windowsa</li>
+      <li>Opera - nie mam zainstalowanej</li>
+    </ul>
+
+    <h3>Ad. 3</h3>
+    Nope:
+    <ul>
+      <li>color</li>
+      <li>month</li>
+      <li>range</li>
+      <li>radio</li>
+      <li>checkbox</li>
+      <li>submit</li>
+      <li>reset</li>
+    </ul>
+
+
+
+  </section>
 
 
 </body>

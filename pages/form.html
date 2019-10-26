@@ -14,12 +14,27 @@
 </head>
 
 <body>
-  <form action="#" method="get" id="form1">
-    Imię <input type="text" name="name"><br />
-    Nazwisko <input type="text" name="surname"><br />
-    Miesiąc urodzin <input type="text" name="birthmonth"><br />
-    E-mail <input type="text" name="email"><br />
-    Telefon <input type="text" name="phone"><br />
+  <h2>Formularz</h2>
+  <form action="#" method="get" id="form1" autocomplete="on">
+    Imię <input type="text" name="name" autofocus> Format: tekst<br />
+    Nazwisko <input type="text" name="surname" required> Format: tekst<br />
+    Miesiąc urodzin <input list="month" name="birthmonth"> Format: tekst<br />
+    <datalist id="month">
+      <option value="styczeń">
+      <option value="luty">
+      <option value="marzec">
+      <option value="kwiecień">
+      <option value="maj">
+      <option value="czerwiec">
+      <option value="lipiec">
+      <option value="sierpień">
+      <option value="wrzesień">
+      <option value="październik">
+      <option value="listopad">
+      <option value="grudzień">
+    </datalist>
+    E-mail <input type="email" name="email" required> Format: tekst@tekst<br />
+    Telefon <input type="tel" name="phone" pattern="[0-9]{9}"> Format: 9 cyfr<br />
     Kolor <select>
       <optgroup label="Ciemny">
         <option value="black">czarny</option>
