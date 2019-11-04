@@ -16,8 +16,8 @@
 <body>
   <h2>Formularz</h2>
   <form action="#" method="get" id="form1" autocomplete="on">
-    Imię <input type="text" name="name" autofocus> Format: tekst<br />
-    Nazwisko <input type="text" name="surname" required> Format: tekst<br />
+    Imię <input type="text" name="name" pattern="[A-Z][a-z]{1,}" autofocus> Format: pierwsza litera duża, tylko litery<br />
+    Nazwisko <input type="text" name="surname" pattern="[A-Z][a-z]{1,}"  required> Format: pierwsza litera duża, tylko litery<br />
     Miesiąc urodzin <input list="month" name="birthmonth"> Format: tekst<br />
     <datalist id="month">
       <option value="styczeń">
