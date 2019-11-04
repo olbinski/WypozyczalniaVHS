@@ -10,7 +10,7 @@
 
     <title>Aktualności</title>
 
-    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="/css/main.css" />
 </head>
 
 <body>
@@ -35,7 +35,7 @@
         <article>
             <h2>Ulubione filmy</h2>
             <p>W ramach Światowego Dnia Filmu przeprowadziliśmy ankietę wśród naszych klientów.</p>
-            <p><strong>Ulubione gatunki filmów naszych klientów:</strong></p>
+            <p id="poll_title"><strong>Ulubione gatunki filmów naszych klientów:</strong></p>
             <ol>
                 <li><meter value="0.42">42%</meter> Dramat<br /></li>
                 <li><meter value="3" min="0" max="10">3 out of 10</meter> Komedia<br /></li>
@@ -51,7 +51,7 @@
         </article>
 
         <article>
-            <h2>Święta</h2>
+            <h2 class="important">Święta</h2>
             <p>Informujemy, że w związku z nadchodzącymi świętami nasza wypożyczalnia będzie czynna w specjalnych
                 godzinach.</p>
             <details>
@@ -71,11 +71,56 @@
             </footer>
         </article>
 
+
+        <article>
+            <h2 class="important">Upomnienie</h2>
+            <p>Przypominamy, że wszystkie osoby zalegające z oddaniem kaset więcej niż miesiąc zobowiązane są je zwrócić
+                do końca roku.</p>
+            <footer>
+                <p>
+                    Zamieszczony
+                    <time datetime="2019-12-27 13:00">27 grudnia</time>
+                    przez Paulinę.
+                </p>
+            </footer>
+        </article>
+
     </section>
 
-    <section>
+    <section class="border">
         <h1>Kontakt</h1>
         <p>Możesz się z nami skontaktować poprzez numer telefonu: 123456789</p>
+
+
+        <div>
+            <table class="plain">
+                <tr>
+                    <th>Osoba</th>
+                    <th>Dni w pracy</th>
+                    <th>Numer telefonu</th>
+                </tr>
+                <tr>
+                    <td>Paulina</td>
+                    <td>poniedziałek</td>
+                    <td>123456789</td>
+                </tr>
+                <tr>
+                    <td>Agata</td>
+                    <td>wtorek, środa</td>
+                    <td>145859685</td>
+                </tr>
+                <tr>
+                    <td>Franek</td>
+                    <td>czwartek</td>
+                    <td>859652658</td>
+                </tr>
+                <tr>
+                    <td>Daniel</td>
+                    <td>piątek, sobota</td>
+                    <td>745852365</td>
+                </tr>
+            </table>
+        </div>
     </section>
 
 </body>
