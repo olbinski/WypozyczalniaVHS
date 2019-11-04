@@ -68,7 +68,8 @@ li {
 h2 {
     font-family: 'Courier New', Courier, monospace;
     font-style: italic;
-    background-image: url("http://www.textures4photoshop.com/tex/thumbs/ice-texture-free-652.jpg");
+    /* background-image: url("http://www.textures4photoshop.com/tex/thumbs/ice-texture-free-652.jpg"); */
+    background-image: url("https://mediacdn.bellacor.com/images/500/238801WF36314.jpg");
     background-repeat: repeat;
 }
 
