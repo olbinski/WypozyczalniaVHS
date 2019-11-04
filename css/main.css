@@ -1,0 +1,282 @@
+.zad2 {
+    display: none;
+}
+
+/* 2. Rules + style h2 (Strona główna) */
+h1 {
+    color: coral;
+}
+
+/* 11. media (Strona główna -> lista w ramce) */
+li {
+    background-color: azure;
+}
+  
+  @media screen and (min-width: 800px) {
+    li {
+      background-color: lavender;
+    }
+}
+
+
+/* 3. em, px, pt, % (Hyperlink) */
+/* 4. background: color, image, repeat, attachment, position, - (Hyperlink) */
+/* 7. font: weight, style, variant, size, family, line-height (Hyperlink) */
+.intro {
+    font-size: 1.5em;
+    background-color: cornsilk;
+}
+
+#quotation_label {
+    font-size: 20px;
+    font-variant: small-caps;
+    font-style: italic;
+    line-height: 1.5em;
+}
+
+#poll_title {
+    font-size: 16pt;
+    background-color: lavenderblush;
+}
+
+#vhs_background {
+    font-size: 150%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+
+    background-image: url("https://www.evhs.pl/images/DSC_0709.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.vhs_background_mini {
+    background-image: url("https://a.allegroimg.com/s128/03cb29/946fce2b44608fff87c430d12eba");
+    background-repeat: repeat;
+    background-attachment: fixed;
+}
+
+/* .paper_background{
+    background-image: url("http://www.textures4photoshop.com/tex/thumbs/ice-texture-free-652.jpg");
+    background-repeat: repeat;
+} */
+
+#vhs_background_one {
+    background: silver url("https://a.allegroimg.com/s128/03cb29/946fce2b44608fff87c430d12eba") no-repeat right top;
+}
+
+/* 7. font: weight, style, family (Hyperlink) */
+h2 {
+    font-family: 'Courier New', Courier, monospace;
+    font-style: italic;
+    background-image: url("http://www.textures4photoshop.com/tex/thumbs/ice-texture-free-652.jpg");
+    background-repeat: repeat;
+}
+
+/* 10. CSS rules - HTML attributes' values (News -> świeta, Upomnienie) */
+h2[class="important"] {
+    color: crimson;
+}
+
+/* 5. > */
+article > p {
+    font-style: italic;
+    color: darkorchid;
+}
+
+/* 8. border: width, style, color (Strona główna) */
+.border {
+    border-width: 8px;
+    border-style: dotted;
+    border-color: teal;
+}
+
+
+/* 6. box-model: padding */
+/* 9. table (Cennik) */
+table {
+    border: 2px solid orange;
+    padding: 10px;
+    border-spacing: 5px;
+    background-color: blanchedalmond;
+}
+
+th {
+    background-color: peachpuff;
+}
+
+th, tr {
+    border-bottom: 2px dashed orange;
+    text-align: center;
+}
+
+tr > th {
+    width: 100px;
+    height: 30px;
+    padding: 0.5em;
+    vertical-align: bottom;
+}
+
+td {
+    text-align: end;
+}
+
+/* 12. hover (Cennik) */
+td:hover {
+    background-color: gold;
+}
+
+/* 12. active, hover, link, visited (Strona główna) */
+a:link {
+    color: cadetblue;
+}
+a:visited {
+    color: goldenrod;
+}
+a:hover {
+    background-color: indianred;
+}
+a:active{
+    color: darkolivegreen;
+}
+
+/* 6. width, position - relative, left */
+/* 12. first-child, last-child, nth-last-child, only-child (Hyperlink) */
+p:first-child {
+    color: red;
+}
+p:last-child {
+    color: green;
+} /* ostatnie dziecko w kontenerze (NEws) */
+P:last-of-type {
+    width: 50%;
+    position: relative;
+    left: 50px;
+} /* ostatni element takiego typu (News) */
+p:only-child {
+    background-color: mintcream;
+}
+:nth-last-child(12) {
+    background-color: palevioletred;
+}
+ 
+/* 12. checked, disabled, enabled, focus, required (Napisz do nas) */
+input[type=text]:disabled {
+    background-color: grey;
+}
+input[type=text]:enabled {
+    background-color: papayawhip;
+}
+input:focus {
+    background-color: lightyellow;
+}
+input:required {
+    background-color: palevioletred;
+}
+input:checked {
+    height: 20px;
+    width: 20px;
+}
+
+/* 12. empty (Hyperlink, 2 paragraf) */
+p:empty {
+    width: 100px;
+    height: 20px;
+    background: blue;
+}
+
+/* 12. nth-child (News -> Kontakt) */
+.plain {
+    border-collapse: collapse;
+}
+div > th, tr {
+    border-bottom: none;
+}
+tr:nth-child(even) {
+    background-color: lightgoldenrodyellow;    
+}
+
+/* 12. not (Strona główna)*/
+:not(div > p) {
+    font-style: italic;
+}
+:not(form) {
+    font-style: normal;
+}
+
+/* 12. target (Hyperlink -> kliknąć w etykietę) */
+:target {
+    border: 2px solid #D4D4D4;
+    background-color: #e5eecc;
+}
+
+/* 6. margin, padding, width, height, position:(absolute, relative, static, fixed) */
+/* 6. left, right, top, bottom, float, clear (TOP Films) */
+#div1 {
+    background-color: rebeccapurple;
+    width: 200px;
+    height: 100px;
+    margin: 50px;
+}
+#div2 {
+    background-color: royalblue;
+    width: 500px;
+    height: 100px;
+    position: absolute;
+}
+#div3 {
+    background-color: olivedrab;
+    width: 200px;
+    height: 300px;
+    position: relative;
+    left: 200px;
+}
+#div4 {
+    background-color: burlywood;
+    padding: 10px;
+    width: 200px;
+    height: 300px;
+    position: static;
+}
+#div5 {
+    background-color: pink;
+    width: 200px;
+    height: 100px;
+    position: fixed;
+    top: 0;
+    right: 0;
+}
+#div6 {
+    background-color: cadetblue;
+    width: 200px;
+    height: 100px;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+}
+#div7 {
+    background-color: mistyrose;
+    width: 400px;
+    height: 400px;
+    float: right;
+}
+#div8 {
+    background-color: moccasin;
+    width: 300px;
+    height: 200px;
+    clear: right;
+}
+
+
+
+
+:first - co to?
+:not() - nie działa ???????????????
+
+
+
+
+
+
+
+
+
