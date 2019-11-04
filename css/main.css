@@ -18,6 +18,16 @@ li {
     }
 }
 
+   @media print {
+    body {
+        filter: grayscale(100%);
+    }
+
+    p {
+        color: red;
+    }
+}
+
 
 /* 3. em, px, pt, % (Hyperlink) */
 /* 4. background: color, image, repeat, attachment, position, - (Hyperlink) */
@@ -196,13 +206,13 @@ tr:nth-child(even) {
     background-color: lightgoldenrodyellow;    
 }
 
-/* 12. not (Strona główna)*/
+/* 12. not (Strona główna)
 :not(div > p) {
     font-style: italic;
 }
-:not(form) {
-    font-style: normal;
-}
+:not(input) {
+    font-style: italic;
+} */
 
 /* 12. target (Hyperlink -> kliknąć w etykietę) */
 :target {
@@ -223,6 +233,8 @@ tr:nth-child(even) {
     width: 500px;
     height: 100px;
     position: absolute;
+    top: 400px;
+    left: 0px;
 }
 #div3 {
     background-color: olivedrab;
