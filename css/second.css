@@ -1,0 +1,37 @@
+#zad1{
+    color: white;
+    text-shadow: 2px 2px 4px #000000 ;
+}
+
+.containter{
+    width: 400px;
+    height: 100px;
+    margin: 10px;
+}
+
+#zad2{
+   
+    background-color: red;
+    border-radius: 10px 30px;
+}
+
+#zad31{
+    background-color: rgba(255,0,0,0.3)
+}
+
+#zad32{
+    /* background-color: hsla(hue, saturation, lightness, alpha); */
+    background-color: hsla(120,100%,75%,0.3);
+}
+
+#zad4{   
+    border: 1px solid;
+    padding: 10px;
+    box-shadow: 5px 5px 8px blue, 10px 10px 8px red, 15px 15px 8px green;  
+}
+
+#zad5{
+    background-color:red;
+    background-image: repeating-linear-gradient(190deg,red,yellow 7%,green 10%);;
+
+}
