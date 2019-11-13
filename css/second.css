@@ -1,4 +1,4 @@
-#zad1{
+#text_shadow{
     color: white;
     text-shadow: 2px 2px 4px #000000 ;
 }
@@ -9,29 +9,121 @@
     margin: 10px;
 }
 
-#zad2{
+.containter2{
+    width: 600px;
+    height: 300px;
+    margin: 10px;
+}
+
+#border_radius{
    
     background-color: red;
     border-radius: 10px 30px;
 }
 
-#zad31{
+#rgba{
     background-color: rgba(255,0,0,0.3)
 }
 
-#zad32{
+#hsla{
     /* background-color: hsla(hue, saturation, lightness, alpha); */
     background-color: hsla(120,100%,75%,0.3);
 }
 
-#zad4{   
+#box_shadow{   
     border: 1px solid;
     padding: 10px;
     box-shadow: 5px 5px 8px blue, 10px 10px 8px red, 15px 15px 8px green;  
 }
 
-#zad5{
-    background-color:red;
-    background-image: repeating-linear-gradient(190deg,red,yellow 7%,green 10%);;
+#grad_linear {
+    background-image: linear-gradient(to right, red,orange,yellow,green,blue,indigo,violet);
+  }
 
+#grad_radius{
+    background-image: radial-gradient(violet 25%, indigo 40%, orange 50%);
+}
+
+#back_img_repeat {
+    /* background-image: url("https://a.allegroimg.com/s128/03cb29/946fce2b44608fff87c430d12eba"); */
+    background-image: url("https://previews.123rf.com/images/danysharipova/danysharipova1803/danysharipova180300009/98253210-colored-abstract-texture-gradient-background.jpg");
+    background-size: 30%;
+    background-repeat: repeat;
+}
+
+#back_img_position {
+    background-image: url("https://a.allegroimg.com/s128/03cb29/946fce2b44608fff87c430d12eba");
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#back_img_origin {
+    padding: 25px;
+    background-image: url("https://previews.123rf.com/images/danysharipova/danysharipova1803/danysharipova180300009/98253210-colored-abstract-texture-gradient-background.jpg");
+    background-size: 50%;
+    background-repeat: no-repeat;
+    background-origin: padding-box;
+}
+
+#border_img {
+    border: 10px solid transparent;
+    border-image-source: url("https://previews.123rf.com/images/danysharipova/danysharipova1803/danysharipova180300009/98253210-colored-abstract-texture-gradient-background.jpg");
+    border-image-repeat: repeat;
+    border-image-slice: 200;
+}
+
+#border_img2 {
+    border: 10px solid;
+    border-image-source: url("https://previews.123rf.com/images/danysharipova/danysharipova1803/danysharipova180300009/98253210-colored-abstract-texture-gradient-background.jpg");
+    border-image-repeat: stretch;
+    border-image-slice: 400;
+}
+
+#transition {
+    background-image: url("https://previews.123rf.com/images/danysharipova/danysharipova1803/danysharipova180300009/98253210-colored-abstract-texture-gradient-background.jpg");
+    background-size: 50%;
+    background-repeat: no-repeat;
+    -webkit-transition: width 0.8s;
+    transition: width 0.8s;
+}
+
+#transition:hover {
+    width: 800px;
+}
+
+#transform_rotate {
+    background-image: url("https://previews.123rf.com/images/danysharipova/danysharipova1803/danysharipova180300009/98253210-colored-abstract-texture-gradient-background.jpg");
+    background-size: 50%;
+    background-repeat: no-repeat;
+    -ms-transform: rotate(20deg); /* IE 9 */
+    -webkit-transform: rotate(20deg); /* Safari 3-8 */
+    transform: rotate(20deg);
+}
+
+#transform_skewy {
+    background-image: url("https://previews.123rf.com/images/danysharipova/danysharipova1803/danysharipova180300009/98253210-colored-abstract-texture-gradient-background.jpg");
+    background-size: 50%;
+    background-repeat: no-repeat;
+    -ms-transform: skewY(20deg); /* IE 9 */
+    -webkit-transform: skewY(20deg); /* Safari 3-8 */
+    transform: skewY(20deg);
+}
+
+#font {
+    font-family: Gloria;
+    color: orange;
+}
+
+#column {
+    -webkit-column-count: 3; /* Chrome, Safari, Opera */
+    -moz-column-count: 3; /* Firefox */
+    column-count: 3;
+
+    -webkit-column-gap: 60px; /* Chrome, Safari, Opera */
+    -moz-column-gap: 60px; /* Firefox */
+    column-gap: 60px;
+
+    -webkit-column-rule: 4px dotted red; /* Chrome, Safari, Opera */
+    -moz-column-rule: 4px dotted red; /* Firefox */
+    column-rule: 4px dotted red;
 }
