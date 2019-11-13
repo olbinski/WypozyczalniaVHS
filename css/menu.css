@@ -4,6 +4,8 @@ ul {
     list-style: none;
     background-color: midnightblue;
     padding-left: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    z-index: 1000;
 }
 
 li {
@@ -31,11 +33,11 @@ ul ul ul {
 }
 
 a {
-  color: #FFF;
-  text-decoration: none;
+    color: #FFF;
+    text-decoration: none;
 }
-a:hover {
-  border-bottom: 1px dashed #FFF;
+a :hover {
+    border-bottom: 1px dashed #FFF;
 }
 
 li:hover{
