@@ -52,6 +52,7 @@
 }
 
 #back_img_position {
+    background-color: lightseagreen;
     background-image: url("https://a.allegroimg.com/s128/03cb29/946fce2b44608fff87c430d12eba");
     background-repeat: no-repeat;
     background-position: center;
@@ -141,4 +142,25 @@
 #anima {
     animation: anim 4s infinite;
     position: relative;
+}
+
+.flex-container {
+    display: flex;
+    flex-direction: row;
+    background-color: lightskyblue;
+    height: 150px;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex {
+    background-color: lightgoldenrodyellow;
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+    text-align: center;
+}
+
+.flex:hover {
+    flex: 2 3;
 }
