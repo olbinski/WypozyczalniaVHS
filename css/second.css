@@ -3,13 +3,13 @@
     text-shadow: 2px 2px 4px #000000 ;
 }
 
-.containter{
+.container{
     width: 400px;
     height: 100px;
     margin: 10px;
 }
 
-.containter2{
+.container2{
     width: 600px;
     height: 300px;
     margin: 10px;
@@ -126,4 +126,19 @@
     -webkit-column-rule: 4px dotted red; /* Chrome, Safari, Opera */
     -moz-column-rule: 4px dotted red; /* Firefox */
     column-rule: 4px dotted red;
+}
+
+
+@keyframes anim {
+    /* from {background-color: red; left: 0px;}
+    to {background-color: yellow; left: 500px;} */
+    0%   {background-color: red; left: 0px;}
+    25%  {background-color: yellow; left: 400px;}
+    50%  {background-color: mediumaquamarine; left: 100px;}
+    100% {background-color: violet; left: 500px;}
+}
+
+#anima {
+    animation: anim 4s infinite;
+    position: relative;
 }
