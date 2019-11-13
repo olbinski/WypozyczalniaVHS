@@ -143,6 +143,18 @@
     position: relative;
 }
 
+@font-face {
+    font-family: Gloria;
+    src: url(/files/fonts/GloriaHallelujah-Regular.ttf);
+}
+
+@media only screen and (min-width: 768px) {
+    .col1 {column-count: 2; column-rule: 10px dashed blue;}
+}
+@media only screen and (min-width: 1024px) {
+    .col1 {column-count: 3; column-rule: 10px double violet;}
+}
+
 .flex-container {
     display: flex;
     flex-direction: row;
