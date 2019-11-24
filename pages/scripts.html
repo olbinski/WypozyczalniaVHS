@@ -5,14 +5,14 @@
     <style>
         .flex-container {
             height: 300px;
-            width: 800px;
+            width: 900px;
             display: flex;
         }
 
         .flex-container>div {
             margin: 10px;
             padding: 20px;
-            flex-basis: 200px
+            flex-basis: 225px
         }
 
         .user {
@@ -78,12 +78,14 @@
         function load() {
             var loadCounter = 0;
             var text = "";
-            document.getElementById("loader").innerHTML = "Proces załadowania: ";
+            document.getElementById("loader").innerHTML =
+                "Proces załadowania: ";
             do {
                 text = `${loadCounter++}% `;
             }
-            while (loadCounter <= 100)
-            document.getElementById("loader").innerHTML = "Proces załadowania: " + text;
+            while (loadCounter <= 100);
+            document.getElementById("loader").innerHTML =
+                "Proces załadowania: " + text;
         }
 
 
@@ -110,7 +112,7 @@
             document.getElementById("luckMeter").innerHTML =
                 "Twój dzisiejszy miernik szczęścia: " + luck.toPrecision(4);
 
-            document.getElementById("display").style['display'] = 'block';
+            document.getElementById("display").style.display = "block";
         }
 
 
@@ -125,8 +127,8 @@
         var butClass = document.getElementsByClassName("buttonClicked");
 
         for (var i = 0; i < butClass.length; i++) {
-            butClass[i].addEventListener('click', function () {
-                this.style['background-color'] = 'HoneyDew';
+            butClass[i].addEventListener("click", function () {
+                this.style["background-color"] = "HoneyDew";
             }, false);
         }
 
@@ -158,7 +160,8 @@
         }
 
         function vote() {
-            var userNote = prompt("Twoja średnia ocena naszego portalu (0.0-5.0):", "5.0");
+            var userNote = prompt(
+                "Twoja średnia ocena naszego portalu (0.0-5.0):","5.0");
             userNote = Math.floor(userNote);
             switch (userNote) {
                 case 0:
@@ -179,7 +182,8 @@
             }
 
             document.getElementById("answer").innerHTML =
-                "Twoja średnia ocena: " + userNote + "<br />Nasza odpowiedź: " + ourAnswer;
+                "Twoja średnia ocena: " + userNote +
+                "<br />Nasza odpowiedź: " + ourAnswer;
         }
 
         function print() {
@@ -202,7 +206,8 @@
 
 
         window.addEventListener("click", function () {
-            document.getElementsByClassName("backgroundColor")[0].style['background-color'] = 'AliceBlue';
+            var elem = document.getElementsByClassName("backgroundColor")[0];
+            elem.style["background-color"] = "AliceBlue";
         });
     </script>
 
