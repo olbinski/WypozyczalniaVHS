@@ -93,10 +93,10 @@
         var score = 0;
 
         function enterNamePrompt() {
-            var person = prompt("Wprowadz swoje imię", "Michalina");
-            if (person != "") {
+            var name = prompt("Wprowadz swoje imię", "Michalina");
+            if (name !== "") {
                 document.getElementById("name").innerHTML =
-                    "Cześć, " + person + "! Twoje punkty: ";
+                    "Cześć, " + name + "! Twoje punkty: ";
             }
             else {
                 document.getElementById("name").innerHTML =
@@ -136,12 +136,12 @@
 
 
         function counter() {
-            document.getElementById("score").innerHTML = `${score++}`
+            document.getElementById("score").innerHTML = `${score++}`;
         }
         function reset() {
             alert("Zaczynasz od początku");
             load(0);
-            document.getElementById("score").innerHTML = `${score = 0}`
+            document.getElementById("score").innerHTML = `${score = 0}`;
         }
 
 
@@ -187,18 +187,18 @@
         }
 
         function print() {
-            var number = prompt("Podaj liczbę elementów do wyświetlenia", 10)
+            var number = prompt("Podaj liczbę elementów do wyświetlenia", 10);
             var text = "";
             var i = 0;
             while (i < number) {
                 text += "Element nr: " + parseInt(i + 1) + "<br />";
                 i++;
-            };
+            }
             document.getElementById("element").innerHTML = text;
         }
 
         function input() {
-            var number = prompt("Podaj liczbę zmiennoprzecinkową", 3.4325678)
+            var number = prompt("Podaj liczbę zmiennoprzecinkową", 3.4325678);
             document.getElementById("float").innerHTML = parseFloat(number);
         }
 
