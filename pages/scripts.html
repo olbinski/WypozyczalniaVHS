@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        .flex-container {
+            height: 300px;
+            width: 800px;
+            display: flex;
+        }
+
+        .flex-container>div {
+            margin: 10px;
+            padding: 20px;
+            flex-basis: 200px
+        }
+
+        .user {
+            font-size: 18px;
+            font-style: italic;
+            text-decoration: underline;
+        }
+    </style>
+    <script src="/js/main.js"></script>
+</head>
+
+<body class="backgroundColor">
+    <script>
+        document.writeln("<p>Chcesz wziąć udział w naszej loterii?</p>");
+        document.writeln("<p style='font-size: 12px;'>(Klikaj przyciski i patrz, co się dzieje)</p>");
+    </script>
+
+    <button id="enterName" class="buttonClicked" style="font-size: 20px;" onclick="enterNamePrompt(); load()">Wprowadź
+        imię</button>
+
+    <div id="display" style="display: none;">
+        <br />
+        <p id="loader"></p>
+        <p>
+            <span id="name" class="user"></span>
+            <span id="score" class="user"></span>
+        </p>
+
+        <p id="luckMeter"></p>
+
+        <p id="change" style="font-size: 30px;">-- Loteria --</p>
+
+        <button class="buttonClicked" style="font-size: 20px;"
+            onclick="colorChange('LightPink', 'Wygrałeś kasetę!');counter();">Strzał!</button>
+        <button class="buttonClicked" style="font-size: 20px;"
+            onclick="colorChange('AliceBlue', '-- Loteria --');reset();">Zagraj ponownie</button>
+
+    </div>
+
+    <div class="flex-container">
+        <div>
+            <button class="buttonClicked" onclick="rank();">Ranking</button>
+            <p id="ranking"></p>
+        </div>
+
+        <div>
+            <button class="buttonClicked" onclick="vote();">Zagłosuj</button>
+            <p id="answer"></p>
+        </div>
+
+        <div>
+            <button class="buttonClicked" onclick="print();">Wyświetl</button>
+            <p id="element"></p>
+        </div>
+
+        <div>
+            <button class="buttonClicked" onclick="input();">Wpisz</button>
+            <p id="float"></p>
+        </div>
+    </div>
+
+    <script>
+        function load() {
+            var loadCounter = 0;
+            var text = "";
+            document.getElementById("loader").innerHTML = "Proces załadowania: ";
+            do {
+                text = `${loadCounter++}% `;
+            }
+            while (loadCounter <= 100)
+            document.getElementById("loader").innerHTML = "Proces załadowania: " + text;
+        }
+
+
+
+        var score = 0;
+
+        function enterNamePrompt() {
+            var person = prompt("Wprowadz swoje imię", "Michalina");
+            if (person != "") {
+                document.getElementById("name").innerHTML =
+                    "Cześć, " + person + "! Twoje punkty: ";
+            }
+            else {
+                document.getElementById("name").innerHTML =
+                    "Witaj, Gościu! Twoje punkty: ";
+            }
+
+            document.getElementById("score").innerHTML = score;
+
+            var luck = Math.random() * 100;
+
+            luck = parseFloat(luck.toString());
+
+            document.getElementById("luckMeter").innerHTML =
+                "Twój dzisiejszy miernik szczęścia: " + luck.toPrecision(4);
+
+            document.getElementById("display").style['display'] = 'block';
+        }
+
+
+        button = document.getElementById("enterName");
+
+        button.addEventListener("blur", function () {
+            document.getElementById("enterName").innerHTML = "Wprowadzono";
+        });
+
+
+
+        var butClass = document.getElementsByClassName("buttonClicked");
+
+        for (var i = 0; i < butClass.length; i++) {
+            butClass[i].addEventListener('click', function () {
+                this.style['background-color'] = 'HoneyDew';
+            }, false);
+        }
+
+
+
+
+        function counter() {
+            document.getElementById("score").innerHTML = `${score++}`
+        }
+        function reset() {
+            alert("Zaczynasz od początku");
+            load(0);
+            document.getElementById("score").innerHTML = `${score = 0}`
+        }
+
+
+
+
+
+
+        function rank() {
+            var rank = ["Kasia 52", "Martyna 35", "Piotrek 24", "Kamil 18"];
+            var text = "";
+            var i;
+            for (i = 0; i < rank.length; i++) {
+                text += i + 1 + ". " + rank[i] + "<br />";
+            }
+            document.getElementById("ranking").innerHTML = text;
+        }
+
+        function vote() {
+            var userNote = prompt("Twoja średnia ocena naszego portalu (0.0-5.0):", "5.0");
+            userNote = Math.floor(userNote);
+            switch (userNote) {
+                case 0:
+                case 1:
+                    ourAnswer = "Co możemy poprawić?";
+                    break;
+                case 2:
+                case 3:
+                    ourAnswer = "Wciąż dokładamy starań, aby było lepiej";
+                    break;
+                case 4:
+                case 5:
+                    ourAnswer = "Cieszymy się, że podoba Ci się :)";
+                    break;
+                default:
+                    ourAnswer = "Nie udzieliłeś odpowiedzi :(";
+                    userNote = "?";
+            }
+
+            document.getElementById("answer").innerHTML =
+                "Twoja średnia ocena: " + userNote + "<br />Nasza odpowiedź: " + ourAnswer;
+        }
+
+        function print() {
+            var number = prompt("Podaj liczbę elementów do wyświetlenia", 10)
+            var text = "";
+            var i = 0;
+            while (i < number) {
+                text += "Element nr: " + parseInt(i + 1) + "<br />";
+                i++;
+            };
+            document.getElementById("element").innerHTML = text;
+        }
+
+        function input() {
+            var number = prompt("Podaj liczbę zmiennoprzecinkową", 3.4325678)
+            document.getElementById("float").innerHTML = parseFloat(number);
+        }
+
+
+
+
+        window.addEventListener("click", function () {
+            document.getElementsByClassName("backgroundColor")[0].style['background-color'] = 'AliceBlue';
+        });
+    </script>
+
+</body>
+
+</html>
