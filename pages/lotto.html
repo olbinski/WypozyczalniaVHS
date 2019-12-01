@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title> scripts</title>
+    <style>
+        .flex-container {
+            height: 300px;
+            width: 900px;
+            display: flex;
+        }
+
+        .flex-container>div {
+            margin: 10px;
+            padding: 20px;
+            flex-basis: 225px
+        }
+
+        .user {
+            font-size: 18px;
+            font-style: italic;
+            text-decoration: underline;
+        }
+    </style>
+    <script src="/js/main.js"></script>
+
+    <script>
+        var scope = 49;
+
+        
+        function get_action(event) {
+            
+            var inputs = document.getElementsByClassName("numInput");
+
+
+            var randoms = [];
+            // randoms.push(1);
+
+
+            do{
+                var ran = Math.random();
+
+                ran = parseInt(ran * scope + 1);
+                if(!randoms.includes(ran)){
+                    randoms.push(ran)
+                }
+            }while(randoms.length < 6)
+
+            var winRatio = 0;
+            for(var i = 0; i < inputs.length; i++){
+                winRatio += randoms.includes(parseInt( inputs[i].value))
+            }
+            console.log(randoms)
+            alert("Wylosowane liczby: " + randoms + "\nTrafiłeś: " +  winRatio);
+            event.preventDefault();
+        }
+    </script>
+
+</head>
+
+<body class="backgroundColor">
+
+    <form id="form1" method="POST" autocomplete="on" onsubmit="get_action(event)" action="javascript:void(0)">
+
+        Pierwsza liczba <input list="numbers" class="numInput"><br />
+        Druga liczba <input list="numbers" class="numInput"><br />
+        Trzecia liczba <input list="numbers" class="numInput"><br />
+        Czwarta liczba <input list="numbers" class="numInput"><br />
+        Piąta liczba <input list="numbers" class="numInput"><br />
+        Szósta liczba <input list="numbers" class="numInput"><br />
+
+
+        <datalist id="numbers">
+        </datalist>
+
+
+        <script>
+            var numbers = "";
+            for (var i = 0; i < scope; i++) {
+                numbers += '<option value="' + (i + 1) + '">';
+            }
+            document.getElementById("numbers").innerHTML = numbers;
+        </script>
+
+
+        <input type="reset" value="Wyczyść">
+        <input type="submit" value="Wyślij">
+
+    </form>
+
+
+    <script>
+
+
+    </script>
+</body>
+
+</html>
