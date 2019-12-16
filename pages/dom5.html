@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Form">
+    <meta name="keywords" content="form">
+
+    <title>Formularz</title>
+
+    <!-- <style>
+        .focused {
+            outline: 1px solid red;
+        }
+    </style> -->
+
+    <style>
+        .invalid {
+            border-color: red;
+        }
+
+        #error {
+            color: red
+        }
+    </style>
+
+    <script>
+        function get_submit_action(event) {
+            if (!confirm("Czy na pewno chcesz wysłać dane?")) {
+                event.preventDefault();
+            }
+        }
+
+        function get_reset_action(event) {
+            if (!confirm("Czy na pewno chcesz wyczyścić dane?")) {
+                event.preventDefault();
+            }
+        }
+    </script>
+
+</head>
+
+<body>
+    <h2>Formularz</h2>
+
+    <form id="form" method="POST" onsubmit="get_submit_action(event)" onreset="get_reset_action(event)">
+        E-mail: <input type="text" id="input">
+        <div id="error"></div>
+
+        <input type="reset" value="Wyczyść">
+        <input type="submit" value="Wyślij">
+    </form>
+
+
+    <script>
+        input.onblur = function () {
+            if (!input.value.includes('@')) {
+                input.classList.add('invalid');
+                error.innerHTML = 'Wprowadź poprawny adres e-mail.'
+            }
+        };
+
+        input.onfocus = function () {
+            if (this.classList.contains('invalid')) {
+                this.classList.remove('invalid');
+                error.innerHTML = "";
+            }
+        };
+    </script>
+
+</body>
+
+</html>
