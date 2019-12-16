@@ -34,6 +34,7 @@
 
 
             var randoms = [];
+
             // randoms.push(1);
 
 
@@ -52,6 +53,8 @@
             }
             console.log(randoms)
             alert("Wylosowane liczby: " + randoms + "\nTrafiłeś: " +  winRatio);
+
+            
             event.preventDefault();
         }
     </script>
@@ -60,7 +63,7 @@
 
 <body class="backgroundColor">
 
-    <form id="form1" method="POST" autocomplete="on" onsubmit="get_action(event)" action="javascript:void(0)">
+    <form id="form1" method="POST" autocomplete="on" onsubmit="get_action(event)">
 
         Pierwsza liczba <input list="numbers" class="numInput"><br />
         Druga liczba <input list="numbers" class="numInput"><br />

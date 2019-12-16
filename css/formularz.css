@@ -1,0 +1,25 @@
+.numbers td{
+    border: solid 1px;
+    text-align: right;
+}
+
+.numbers{
+    border-collapse: collapse;
+}
+
+.inputs tr td:first-child{
+    text-align: right;
+}
+
+.form{
+    text-align: center;
+    background-color: yellow;
+    width: 50%;
+    margin-left: 25%;
+    margin-right: 25%;
+    padding: 10px;
+}
+
+.container{
+    text-align: center;
+}
