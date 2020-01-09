@@ -2,27 +2,37 @@
 <html lang="en">
 
 <head>
+    <meta charset="UTF-8" />
     <title> dom</title>
 
-    <script src="/js/dom2.js"></script>
-   
+    <script src="../js/dom2.js"></script>
 
-   
+
+
+
+
 
 </head>
+
+
+<?php
+print "<body> Nie zalogowales sie </body>"; 
+return ;
+?>
+
 
 <body onkeydown="keys(event)">
     <div id="rootdiv" style="margin-left : 20%; margin-right: 20%; text-align: justify;">
 
-            <p id="screen-log"></p>
+        <p id="screen-log"></p>
 
         <div>
             <input id="colorPicker" type="color">
-            <button id ="button1" onClick='changeColor("background")'> Zmień kolor tła</button>
+            <button id="button1" onClick='changeColor("background")'> Zmień kolor tła</button>
             <button onClick='changeColor("color")'> Zmień kolor tekstu</button>
 
-           
-            <select onChange="changeTextFont(this.value)">
+
+            <select id="textSelect" onChange="changeTextFont(this.value)">
                 <option value="Times New Roman">Times </option>
                 <option value="Calibri"> Calibri</option>
             </select>
@@ -68,8 +78,38 @@
         </p>
 
     </div>
+    <script>
+        document.getElementById("colorPicker").value = "#1234aa"
+    </script>
 
-    <script src="/js/dom4.js"></script>
+
+    <!-- <script src="../js/dom4.js"></script> -->
+    <?php
+
+    if (isset($_COOKIE["background"])) {
+        echo "<script> 
+document.getElementById('rootdiv').style['background'] = '#{$_COOKIE['background']}'
+</script>";
+    }
+
+    if (isset($_COOKIE["color"])) {
+        echo "<script> 
+    document.getElementById('rootdiv').style['color'] = '#{$_COOKIE['color']}'
+    </script>";
+    }
+
+    if (isset($_COOKIE["fontFamily"])) {
+        echo "<script> 
+        document.getElementById('rootdiv').style['fontFamily'] = '{$_COOKIE['fontFamily']}'
+        document.getElementById('textSelect').value= '{$_COOKIE['fontFamily']}'
+
+        
+
+    </script>";
+    }
+
+
+    ?>
 </body>
 
 </html>
