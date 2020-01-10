@@ -15,7 +15,7 @@
 </head>
 
 <body>
-
+<?php include 'login.php'; ?>
         <nav>
                 <ul>
                     <li><a href="#">Kat 1</a>

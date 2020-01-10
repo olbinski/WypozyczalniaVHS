@@ -16,8 +16,8 @@
 
 
 <?php
-print "<body> Nie zalogowales sie </body>"; 
-return ;
+echo ("<body> Nie zalogowales sie </body>" );
+die ;
 ?>
 
 

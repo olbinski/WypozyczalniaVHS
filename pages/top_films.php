@@ -16,6 +16,8 @@
 
 <body>
 
+  <?php include 'login.php'; ?>
+  
   <h3>
     Najpopularniejsze filmy
   </h3>
