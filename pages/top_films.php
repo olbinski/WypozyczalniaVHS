@@ -16,7 +16,22 @@
 
 <body>
 
-  <?php include 'login.php'; ?>
+<?php include '../components/login.php';
+  
+  login();
+
+if( isset($_SESSION['logged_in']) && !empty($_SESSION['logged_in'])):
+  
+  include '../components/user_info.php';
+else:
+include '../components/login_form.php';
+die;
+
+endif;
+  ?>
+ 
+
+
   
   <h3>
     Najpopularniejsze filmy

@@ -13,6 +13,21 @@
     <link rel="stylesheet" href="/css/main.css" />
 </head>
 
+<?php include '../components/login.php'; ?>
+
+  <?php
+  login();
+
+  if(isset($_SESSION['logged_in']) && !empty($_SESSION['logged_in'])):
+    
+    include '../components/user_info.php';
+ else:
+  include '../components/login_form.php';
+  echo "</body>";
+  return;
+ endif;
+ ?>
+
 <body>
 
     <table>

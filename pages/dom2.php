@@ -7,19 +7,7 @@
 
     <script src="../js/dom2.js"></script>
 
-
-
-
-
-
 </head>
-
-
-<?php
-echo ("<body> Nie zalogowales sie </body>" );
-die ;
-?>
-
 
 <body onkeydown="keys(event)">
     <div id="rootdiv" style="margin-left : 20%; margin-right: 20%; text-align: justify;">

@@ -1,8 +1,20 @@
-<?php 
+<?php   
 
-function logged_in() : bool{
-  return isset($_SESSION['logged_in']) && !empty($_SESSION['logged_in']);
-}
+include 'components/login.php';
+
+
+
+
+login();
+
+if( isset($_SESSION['logged_in']) && !empty($_SESSION['logged_in'])):
+  
+  include 'components/user_info.php';
+else:
+include 'components/login_form.php';
+
+endif;
+
 ?>
 <!DOCTYPE html>
 <html lang="pl">
@@ -31,18 +43,17 @@ function logged_in() : bool{
 </head>
 
 <body>
-<?php include 'pages/login.php'?>
   <nav>
     <a href="pages/news.php">Aktualności</a> |
     <a href="pages/graphics.php">Kasety</a> |
-    <a href="pages/top_films.php">TOP filmy</a> | <?php if(logged_in()): ?>
-    <a href="pages/price_list.html">Cennik</a> | 
+    <a href="pages/top_films.php">TOP filmy</a> | 
+    <a href="pages/price_list.php">Cennik</a> | 
     <a href="pages/hyperlink.html">Etykiety</a> | 
     <a href="pages/download.html">Do pobrania</a> |
     <a href="pages/form.html">Napisz do nas</a> |
     <a href="pages/poll.html">Ankieta</a> |
     <a href="pages/print.html">Print</a> |
-    <a href="pages/menu.html">M E N U</a> <?php endif; ?>
+    <a href="pages/menu.html">M E N U</a> 
   </nav>
 
 
