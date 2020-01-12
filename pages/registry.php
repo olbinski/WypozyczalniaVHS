@@ -23,7 +23,7 @@
                         Imię
                     </td>
                     <td>
-                        <input type="text" name="name" autofocus ><br />
+                        <input type="text" name="name" autofocus><br />
                     </td>
                 </tr>
                 <tr>
@@ -90,12 +90,49 @@
 
     <?php
     else :
+        include "../components/database_connection.php";
+
+        // Create connection
+        $conn = new mysqli($servername, $username, $password, $dbname);
+        // Check connection
+        if ($conn->connect_error) {
+            die("Connection failed: " . $conn->connect_error);
+        }
+
+        
+
+        $user["name"] = quotemeta($_POST["name"]);
+        $user["surname"] = quotemeta($_POST["surname"]);
+        $user["birthmonth"] = quotemeta($_POST["birthmonth"]);
+        $user["phone"] = quotemeta($_POST["phone"]);
+        $user["email"] = quotemeta($_POST["email"]);
+        $user["password"] = sha1($_POST["name"]);
+
+
+        
+        $query = "" .
+        sprintf("INSERT INTO `users` (`id`, `name`, `last_name`, `birth_month`, `phone`, `email`, `password`)
+         VALUES (NULL, '%s', '%s', '%s', '%s', '%s', '%s')",$user["name"],$user["surname"],$user["birthmonth"],$user["phone"],$user["email"],$user["password"] );
+
+        
+        echo $query;
+        if (mysqli_query($conn, $query)) {
+            echo "New record created successfully";
+        } else {
+            echo "Error: " . $query . "<br>" . mysqli_error($conn);
+        }
+
+        // while ($row = mysqli_fetch_row($result)) {
+        //     printf("%s (%s)\n", $row[0], $row[1]);
+        // }
+
+        mysqli_close($conn);
+        
+
+
     ?>
 
 
-        Tu trzeba dorobic zapis do bazy danych :)
-
-        dsa
     <?php
 
 
