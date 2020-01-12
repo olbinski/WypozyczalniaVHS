@@ -1,4 +1,4 @@
 <?php
- setcookie($_GET["key"], $_GET["value"], time() + 300, "/");
+ setcookie($_GET["key"], $_GET["value"], time() + 10, "/");
 
 ?>
