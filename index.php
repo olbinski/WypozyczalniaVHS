@@ -1,4 +1,4 @@
-<?php   
+<?php
 
 include 'components/login.php';
 
@@ -7,11 +7,11 @@ include 'components/login.php';
 
 login();
 
-if( isset($_SESSION['logged_in']) && !empty($_SESSION['logged_in'])):
-  
+if (isset($_SESSION['logged_in']) && !empty($_SESSION['logged_in'])) :
+
   include 'components/user_info.php';
-else:
-include 'components/login_form.php';
+else :
+  include 'components/login_form.php';
 
 endif;
 
@@ -28,11 +28,12 @@ endif;
 
   <title>Pierwsza strona</title>
 
-<!-- 2. Rules -->
+  <!-- 2. Rules -->
   <style>
     a {
       color: cornflowerblue;
     }
+
     nav {
       background-color: mistyrose;
       font-size: 1.1em;
@@ -43,18 +44,26 @@ endif;
 </head>
 
 <body>
-  <nav>
-    <a href="pages/news.php">Aktualności</a> |
-    <a href="pages/graphics.php">Kasety</a> |
-    <a href="pages/top_films.php">TOP filmy</a> | 
-    <a href="pages/price_list.php">Cennik</a> | 
-    <a href="pages/hyperlink.html">Etykiety</a> | 
-    <a href="pages/download.html">Do pobrania</a> |
-    <a href="pages/form.html">Napisz do nas</a> |
-    <a href="pages/poll.html">Ankieta</a> |
-    <a href="pages/print.html">Print</a> |
-    <a href="pages/menu.html">M E N U</a> 
-  </nav>
+
+  <div style='height:35px; background-color:mistyrose'>
+    <nav>
+      <a href="pages/news.php">Aktualności</a> |
+      <a href="pages/graphics.php">Kasety</a> |
+      <a href="pages/top_films.php">TOP filmy</a> |
+      <a href="pages/price_list.php">Cennik</a> |
+      <a href="pages/hyperlink.html">Etykiety</a> |
+      <a href="pages/download.html">Do pobrania</a> |
+      <a href="pages/form.html">Napisz do nas</a> |
+      <a href="pages/poll.html">Ankieta</a> |
+      <a href="pages/print.html">Print</a> |
+      <a href="pages/menu.html">M E N U</a>
+      <div style='float: right; font-size: 30px; background-color:lightblue;'>
+        <a style='color:royalblue;' href="pages/registry.php">
+          Zarejestruj się
+        </a>
+      </div>
+    </nav>
+  </div>
 
 
   <h1>Wypożyczalnia kaset VHS</h1>
@@ -90,9 +99,7 @@ endif;
   <a href="pages/form.html">Wyślij zapytanie (formularz)</a><br />
 
 
-  <a href="https://en.wikipedia.org/wiki/Videotape"><img
-      src="https://2.allegroimg.com/s512/030e36/7d8a6d8142ebbbc617a2d61e4222/PROFESJONALNY-ADAPTER-KASETA-MATKA-VHS-C-DO-VHS"
-      title="Otwarta kaseta VHS" alt="Tutaj powinna być otwarta kaseta VHS" /></a> <br />
+  <a href="https://en.wikipedia.org/wiki/Videotape"><img src="https://2.allegroimg.com/s512/030e36/7d8a6d8142ebbbc617a2d61e4222/PROFESJONALNY-ADAPTER-KASETA-MATKA-VHS-C-DO-VHS" title="Otwarta kaseta VHS" alt="Tutaj powinna być otwarta kaseta VHS" /></a> <br />
   <br />
 
 
