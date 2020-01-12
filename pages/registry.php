@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8" />
-    <title> formularz rejestracyjny</title>
+    <title>Formularz rejestracyjny</title>
 
 </head>
 
@@ -13,10 +13,8 @@
 
     if (!isset($_POST["form_submitted"])) :
     ?>
-
-
+        <h2>Formularz rejestracyjny</h2>
         <form action="" method="post" autocomplete="on">
-
             <table>
                 <tr>
                     <td>
