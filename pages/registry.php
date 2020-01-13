@@ -85,6 +85,8 @@
             <input type="submit" value="Wyślij">
             <input type="hidden" name="form_submitted" value="1" />
         </form>
+        <br />
+        <button type="button" onclick="window.location.href='../index.php'">Powrót do strony głównej</button>
 
     <?php
     else :

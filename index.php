@@ -59,7 +59,12 @@ endif;
       <a href="pages/menu.html">M E N U</a>
       <div style='float: right; font-size: 30px; background-color:lightblue;'>
         <a style='color:royalblue;' href="pages/registry.php">
-          Zarejestruj się
+          <?php
+          if(!isset($_SESSION['logged_in']) || empty($_SESSION['logged_in']))
+            echo 'Zarejestruj się';
+          else
+            echo 'Mój profil';
+          ?>
         </a>
       </div>
     </nav>
