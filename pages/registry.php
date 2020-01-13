@@ -14,8 +14,8 @@
 
     if (!isset($_POST["form_submitted"])) :
         $user["name"] = "";
-        $user["last_name"] = "";
-        $user["birth_month"] = "";
+        $user["surname"] = "";
+        $user["birthmonth"] = "";
         $user["phone"] = "";
         $user["email"] = "";
         $user["login"] = "";
@@ -41,7 +41,14 @@
         }
 
     ?>
-        <h2>Formularz rejestracyjny</h2>
+
+        <?php if(!isset($_SESSION['logged_in']) || empty($_SESSION['logged_in'])) : ?>
+            <h2>Formularz rejestracyjny</h2>
+        <?php else : ?>
+            <h2>Mój profil</h2>
+        <?php endif; ?>
+
+
         <form action="" method="post">
             <table>
                 <tr>
@@ -57,7 +64,7 @@
                         Nazwisko
                     </td>
                     <td>
-                        <input type="text" name="surname" required value=<?php echo $user["last_name"] ?>><br />
+                        <input type="text" name="surname" required value=<?php echo $user["surname"] ?>><br />
                     </td>
                 </tr>
                 <tr>
@@ -65,7 +72,7 @@
                         Miesiąc urodzin
                     </td>
                     <td>
-                        <input list="month" name="birthmonth" value=<?php echo $user["birth_month"] ?>><br />
+                        <input list="month" name="birthmonth" value=<?php echo $user["birthmonth"] ?>><br />
                         <datalist id="month">
                             <option value="styczeń">
                             <option value="luty">
@@ -137,7 +144,6 @@
         }
 
 
-
         $user["name"] = quotemeta($_POST["name"]);
         $user["surname"] = quotemeta($_POST["surname"]);
         $user["birthmonth"] = quotemeta($_POST["birthmonth"]);
@@ -149,21 +155,27 @@
 
         if (isset($_POST["id"]) && empty($_POST["id"])) {
             $query = "" .
-                sprintf("INSERT INTO `users` (`id`, `name`, `last_name`, `birth_month`, `phone`, `email`, `login`, `password`)
+                sprintf("INSERT INTO `users` (`id`, `name`, `surname`, `birthmonth`, `phone`, `email`, `login`, `password`)
              VALUES (NULL, '%s', '%s', '%s', '%s', '%s', '%s', '%s')", $user["name"], $user["surname"], $user["birthmonth"], $user["phone"], $user["email"], $user["login"], $user["password"]);
         } else {
-            $query = sprintf("UPDATE `users` SET `name` = '%s', `last_name` = '%s', `birth_month` = '%s', `phone` = '%s', `email` = '%s', `login` = '%s', `password` = '%s' 
+            $query = sprintf("UPDATE `users` SET `name` = '%s', `surname` = '%s', `birthmonth` = '%s', `phone` = '%s', `email` = '%s', `login` = '%s', `password` = '%s' 
             WHERE `users`.`id` = %d", $user["name"], $user["surname"], $user["birthmonth"], $user["phone"], $user["email"], $user["login"], $user["password"], $user["id"]);
         }
 
 
 
-        echo $query;
+        ?> <button type="button" onclick="window.location.href='../index.php'">Powrót do strony głównej</button> <?php
+
+        // echo $query;
         if (mysqli_query($conn, $query)) {
-            echo "New record created successfully";
-            echo $query;
+            if(!isset($_SESSION['logged_in']) || empty($_SESSION['logged_in'])) {            
+                promptMessage("Nowy użytkownik został dodany");
+            } else {
+                promptMessage("Dane zostały zaktualizowane");
+                // echo $query;
+            }
         } else {
-            echo "Error: " . $query . "<br>" . mysqli_error($conn);
+            echo "Błąd: " . $query . "<br>" . mysqli_error($conn);
         }
 
         // while ($row = mysqli_fetch_row($result)) {
@@ -186,3 +198,14 @@
 </body>
 
 </html>
+
+<?php
+function promptMessage($message)
+{
+    echo "
+            <script>
+                alert('{$message}');
+            </script>
+        ";
+}
+?>
